@@ -1,5 +1,7 @@
 --1. What are the names of countries with population greater than 8 million?
-SELECT ...
+SELECT name                              
+FROM country                              
+where Population > 8000000;
 
 --2. What are the names of countries that have “land” in their names?
 SELECT ...

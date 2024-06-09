@@ -31,16 +31,16 @@ order by population limit 10;
 select name from country where Continent ='Africa' and LocalName like Name ;
 
 --10. What countries have Spanish as official language? Hint: see countrylanguage table
-SELECT ...
+select CountryCode from countrylanguage where IsOfficial ="T"  and `Language`='spanish' ;
 
 --11. What countries have official languages spoken between 1% and 10% of the population?
-SELECT ...
+select distinct CountryCode from countrylanguage where IsOfficial ='T' and (Percentage between 1.0 and 10.0);
 
 --12. What languages are spoken by over 90% of the population of a country? Return just the language names, but don't repeat entries
-SELECT ...
+select distinct Language from countrylanguage where (Percentage >= 90.0 ) and IsOfficial ='T';
 
 --13. In which countries is 'Creole English' used? Order by descending percentage of speakers
-SELECT ...
+select CountryCode from countrylanguage where Language ="Creole English" order by Percentage desc ;
 
 --14. What are the 5 oldest countries (by independence date) with some form of republic government? Tip: there are multiple types of republic
 SELECT ...
